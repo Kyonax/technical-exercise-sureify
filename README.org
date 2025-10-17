@@ -8,6 +8,8 @@ This repository contains the implementation of the *Senior Engineer Code [[file:
 
 The project was developed using *TypeScript*, with *Jest* and a *TDD* approach, following a deliberate set of *custom ESLint rules* to simulate strict coding standards. (This Code Guidelines are just for this case scenario check [[file:eslint.config.cjs][eslint.config.cjs]])
 
+*CHECK THE VIDEO TO SEE THE WHOLE TDD APPROACH: [[https://www.youtube.com/watch?v=d5LNi747npo][Youtube Video]]*
+
 * TABLE OF CONTENTs :toc:
 - [[#project-config][PROJECT CONFIG]]
 - [[#set-up-instructions][SET-UP INSTRUCTIONs]]
