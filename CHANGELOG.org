@@ -1,0 +1,81 @@
+#+TITLE: TECHNICAL EXERCISE (Typescript)
+#+AUTHOR: Cristian D. Moreno \\
+#+AUTHOR: Senior Full Stack Web Developer \\
+#+AUTHOR: Villavicencio/Colombia | +573022539479 | [[mailto:kyonax.corp@gmail.com][kyonax.corp@gmail.com]] | [[https://www.linkedin.com/in/kyonax/][Linkedin]] | [[https://github.com/Kyonax][Github]] | [[https://kyonax.github.io][Personal Web]]
+#+OPTIONS: toc:t num:t date:nil H:5
+
+This file documents the commits and version control actions for this specific technical assesment based in time.
+
+* TABLE OF CONTENT :toc:
+- [[#project-changes][PROJECT CHANGEs]]
+  - [[#2025-10-16-gmt-5-initial-implementation--architecture-setup][2025-10-16 (GMT-5), Initial Implementation & Architecture Setup]]
+
+* PROJECT CHANGEs
+** 2025-10-16 (GMT-5), Initial Implementation & Architecture Setup
+- *Project Architecture & Configuration:*
+  - Established core folder structure:
+    - [[file:src/constants/data.ts][constants/]] → Centralized coffee pricing tables.
+    - [[file:src/types/coffee.ts][types/]] → Type definitions for coffee pricing system.
+    - [[file:src/utils/][utils/]] → Functional utilities for business logic.
+  - Added [[file:eslint.config.cjs][eslint.config.cjs]] enforcing custom code guidelines:
+    - `snake_case` for variables and parameters.
+    - `camelCase` for functions and methods.
+    - `UPPER_SNAKE_CASE` for constants.
+    - `kebab-case` for filenames (except index files).
+    - Custom naming enforcement using `@typescript-eslint/naming-convention`.
+    - Prevents relative imports in favor of "@" aliases.
+  - Implemented [[file:jest.config.ts][jest.config.ts]] for Jest + TypeScript integration.
+  - Added [[file:tsconfig.json][tsconfig.json]] for full type safety and alias mapping.
+  - Created [[file:.gitignore][.gitignore]] covering Node.js, TypeScript, and build output exclusions.
+
+- *Core Business Logic:*
+  - [[file:src/utils/format-price.util.ts][format-price.util.ts]]:
+    - Utility function to format numeric totals as USD prices.
+    - Uses `Intl.NumberFormat` for localization support.
+    - Provides two-decimal precision with `$` prefix.
+  - [[file:src/utils/calculate-coffee-price.util.ts][calculate-coffee-price.util.ts]]:
+    - Main computation function handling pricing logic.
+    - Accepts typed `CoffeeOptions` (size, creamer, sweetener).
+    - Aggregates cost using `COFFEE_PRICING_TABLE` from constants.
+    - Returns total amount and formatted currency output.
+    - Supports customizable locale and table overrides for testability.
+
+- *Constants & Typing System:*
+  - [[file:src/constants/data.ts][data.ts]]:
+    - Declares pricing maps for `SIZE`, `CREAMER`, and `SWEETENER`.
+    - Combines all into `COFFEE_PRICING_TABLE` for centralized access.
+  - [[file:src/types/coffee.ts][coffee.ts]]:
+    - Defines `CoffeeSize`, `CreamerType`, and `SweetenerType` union types.
+    - `CoffeePricing` interface enforces consistent pricing structures.
+    - `CoffeeOptions` encapsulates input parameters.
+    - `CoffeePriceResult` standardizes output with total and formatted fields.
+
+- *Testing & Validation:*
+  - [[file:tests/utils/calculateCoffeePrice.test.ts][calculateCoffeePrice.test.ts]]:
+    - Jest test suite covering:
+      - Price calculations across all combinations.
+      - Locale-based formatting validation.
+      - Case-insensitive and whitespace-tolerant inputs.
+      - TypeScript-level type checking (contract tests).
+    - Implements matrix-style testing to ensure consistency and maintainability.
+
+- *Documentation & Meta:*
+  - [[file:CHALLENGE.org][CHALLENGE.org]] → Challenge and exercise specifications.
+  - [[file:README.org][README.org]] → Setup instructions, architecture overview, and usage notes.
+  - [[file:CHANGELOG.org][CHANGELOG.org]] → Version history and evolution log (this file).
+  - [[file:SUREIFY_CRISTIAN_MORENO.org][SUREIFY_CRISTIAN_MORENO.org]] → Author documentation and project context.
+
+- *Development Workflow:*
+  - Added [[file:.github/workflows/sanity-check.yml][GitHub Actions Workflow]]:
+    - Linting, type-checking, and Jest tests on each push/PR.
+    - Node.js 20.x environment for CI consistency.
+  - Enforced Prettier formatting rules:
+    - 2-space indentation.
+    - 80-character line width.
+    - Trailing commas and no semicolons for readability.
+
+- *Summary:*
+  Initial phase establishes a modular, maintainable, and test-driven TypeScript architecture.
+  Each module (types, constants, utils) is designed for isolation, clarity, and future scalability.
+  The ESLint and Prettier configurations enforce a strict but deliberate coding style aimed at
+  maintainability and consistency across the entire Sureify Coffee Pricing project.

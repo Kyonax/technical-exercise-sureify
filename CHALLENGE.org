@@ -1,0 +1,97 @@
+#+TITLE: ☕ Sureify Coffee Pricing Exercise
+#+AUTHOR: Cristian D. Moreno \\
+#+AUTHOR: Senior Full Stack Web Developer \\
+#+AUTHOR: Villavicencio/Colombia | +573022539479 | [[mailto:kyonax.corp@gmail.com][kyonax.corp@gmail.com]] | [[https://www.linkedin.com/in/kyonax/][Linkedin]] | [[https://github.com/Kyonax][Github]] | [[https://kyonax.github.io][Personal Web]]
+#+OPTIONS: toc:t num:t date:nil H:5
+
+This document outlines a code challenge for the Senior Engineer position at Sureify. The challenge focuses on solving a functionality for a coffe project in the best maintainable way possible.
+
+#+begin_quote
+This document is *publicly accessible*.
+
+Sureify does not need to handle a massive amount of data or traffic very quickly.
+Instead, we focus on *reducing defects* and *development costs*.
+Because maintenance is a large part of total development cost, we value *easily maintainable code*.
+#+end_quote
+
+* TABLE OF CONTENT :toc:
+- [[#purpose-of-the-exercise][PURPOSE OF THE EXERCISE]]
+- [[#project-scenario][Project Scenario]]
+- [[#coffee-pricing-variables][Coffee Pricing Variables]]
+  - [[#size][SIZE]]
+  - [[#creamer][CREAMER]]
+  - [[#sweetener][SWEETENER]]
+- [[#examples][EXAMPLES]]
+- [[#your-task][Your Task]]
+- [[#deliverable][Deliverable]]
+
+* PURPOSE OF THE EXERCISE
+In this exercise, you are asked to *write TypeScript code that is easy to maintain*.
+
+We are *not* looking for:
+- Time or space efficiency.
+- "Tricky" or riddle-like solutions.
+
+We are evaluating:
+- Your ability to write *clear, maintainable, and well-structured code*.
+- Your design decisions that *support long-term maintenance*.
+
+At Sureify, we strive to find errors *as early as possible* — ideally during *compilation* or *testing*.
+
+* Project Scenario
+We’re building an *automated coffee vending machine*.
+This machine might be found at a train station or in a large office building.
+
+Your task is to write the *function* that calculates the *price of the coffee*.
+This function is:
+- Deep inside the vending machine code.
+- *Not exposed* as an HTTP API.
+- The rest of the system is already implemented.
+
+* Coffee Pricing Variables
+The following options affect the price of the coffee:
+
+** SIZE
+| Option | Price |
+|--------+-------|
+| Small  | $1.00 |
+| Medium | $1.50 |
+| Large  | $2.00 |
+
+** CREAMER
+| Option    | Price |
+|-----------+-------|
+| None      | $0.00 |
+| Dairy     | $0.25 |
+| Non-Dairy | $0.50 |
+
+** SWEETENER
+| Option            | Price |
+|-------------------+-------|
+| None              | $0.00 |
+| Sugar             | $0.20 |
+| Sugar Alternative | $0.50 |
+
+* EXAMPLES
+Some examples of how pricing works:
+
+1. A *small coffee* with *no creamer* and *no sweetener* costs =\$1.00=.
+2. A *large coffee* with *non-dairy creamer* and *sugar alternative* costs =\$3.00=.
+
+* Your Task
+Write a *function* that:
+- Accepts the following parameters:
+  - =size=
+  - =creamer=
+  - =sweetener=
+- Returns the *formatted price* of the coffee.
+
+* Deliverable
+Explain your *choice of code formatting* and describe how it contributes to:
+- Code readability.
+- Ease of maintenance.
+- Long-term scalability.
+
+#+BEGIN_QUOTE
+Remember: This exercise focuses on *clarity and maintainability*, not performance.
+#+END_QUOTE

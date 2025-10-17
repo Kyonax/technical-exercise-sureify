@@ -1,0 +1,10 @@
+#+TITLE: Sureify — Senior Engineer Challenge Approach
+#+AUTHOR: Cristian D. Moreno \\
+#+AUTHOR: Senior Full Stack Web Developer \\
+#+AUTHOR: Villavicencio/Colombia | +573022539479 | [[mailto:kyonax.corp@gmail.com][kyonax.corp@gmail.com]] | [[https://www.linkedin.com/in/kyonax/][Linkedin]] | [[https://github.com/Kyonax][Github]] | [[https://kyonax.github.io][Personal Web]]
+#+OPTIONS: toc:nil num:nil date:nil H:5
+#+SETUPFILE: ./cv-latex-export.org
+
+\\
+
+\vspace{0.4cm}
